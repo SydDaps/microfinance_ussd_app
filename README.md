@@ -12,7 +12,7 @@ gem install bundler
 
 ## Installation
 
-2. **Install dependencies**:
+**Install dependencies**:
 ```bash
 bundle install
 ```
@@ -52,8 +52,22 @@ Once the request reaches Page 1, we send a message to the dialer using the `rend
 
 On the main menu page, we evaluate the user's input. If the user enters **1**, **2**, or **3**, we handle those options accordingly. For any other input, we resend the request and prompt the user to enter a valid option.
 
-- If the user enters **1**, they are redirected to the loan request menu, located in the `loan_request_menu/page_1` file.
-- If the user enters **2**, they are redirected to the loan balance menu, located in the `loan_balance_menu/page_1` file.
+- If the user enters **1**, they are redirected to the loan request menu (Page 1), where the implementation is located in the `loan_request_menu/page_1` file.
+- If the user enters **2**, they are redirected to the loan balance menu (Page 1), where the implementation is located in the `loan_balance_menu/page_1` file.
 - If the user enters **3**, the session is terminated and closed with a `render_and_end` method, displaying a message: "Goodbye."
 
-This flow ensures a seamless user experience by guiding them through the menu options while maintaining an open session for efficient interaction.
+#### Loan Request Menu Flow
+
+After selecting **1** on the main menu page, the user is redirected to the loan request menu page. On the first page of the loan request menu, we prompt the user to enter the desired loan amount. Once the user submits the amount, we first validate it to ensure it is a valid positive number or float. If the amount is invalid, we render the same page with an error message header: "Invalid Amount," allowing the user to re-enter a valid amount.
+
+If the amount is valid, we store it in the session for retrieval on subsequent pages. We then proceed to the next page of the loan request menu, where we confirm if the user wants to proceed. This implementation is located in the `loan_request_menu/page_2` file.
+
+- Press **1** for "Yes" to continue with the loan request.
+- Press **2** for "No" to cancel the request.
+- Press **3** to go back and re-enter the amount.
+
+If the user responds with **1**, a message stating "Your loan is being processed" is displayed, and the session is closed. If the user responds with **2**, a message stating "Your loan request has been cancelled" is shown. If the user selects **3**, the previous page is rendered again, allowing the user to re-enter the amount.
+
+#### Loan Balance Menu Flow
+
+After selecting **2** on the main menu page, the user is redirected to the loan balance menu page. Since the amount is mocked to **500** in the request, once the user is redirected to this page, their balance is sent. We then await the user's response to check if they press **0** to exit. The implementation for this flow is located in the `loan_balance_menu/page_2` file.
