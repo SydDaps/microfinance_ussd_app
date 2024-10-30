@@ -1,27 +1,21 @@
 # Microfinance USSD App
 
-This is a simple USSD (Unstructured Supplementary Service Data) application, built using the **Bianchi framework**. Bianchi is a framework developed to simplify the creation of USSD applications in Ruby.
+This is a simple USSD (Unstructured Supplementary Service Data) application, built using the **Bianchi framework**. Bianchi is a framework I developed to simplify the creation of USSD applications in Ruby.
 
 ## Prerequisites
 
 - **Ruby**: Ensure Ruby is installed on your machine.
 - **Bundler**: (Optional) Install Bundler to handle dependencies:
-  ```bash
-  gem install bundler
-  ```
+```bash
+gem install bundler
+```
 
 ## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd ussd-app
-   ```
-
 2. **Install dependencies**:
-   ```bash
-   bundle install
-   ```
+```bash
+bundle install
+```
 
 ## Running the App
 
