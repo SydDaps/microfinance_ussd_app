@@ -70,4 +70,4 @@ If the user responds with **1**, a message stating "Your loan is being processed
 
 #### Loan Balance Menu Flow
 
-After selecting **2** on the main menu page, the user is redirected to the loan balance menu page. Since the amount is mocked to **500** in the request, once the user is redirected to this page, their balance is sent. We then await the user's response to check if they press **0** to exit. The implementation for this flow is located in the `loan_balance_menu/page_2` file.
+After selecting **2** on the main menu page, the user is redirected to the loan balance menu page. Since the amount is mocked to **500** in the request, once the user is redirected to this page, their balance is sent. We then await the user's response to check if they press **0** to exit. The implementation for this flow is located in the `loan_balance_menu/page_1` file.
